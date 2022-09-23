@@ -1,5 +1,5 @@
 module Control.Monad.Traversable
--- (>>=),  (=<<)
+-- (>-==),  (==-<)
   ((>>-=), (=-<<)
   ,(>>=-), (-=<<)
   ,(->==), (==<-)
@@ -188,7 +188,7 @@ bindM  :: (Monad m,                Traversable t) => m (t a) -> (a -> m    b ) -
 bindIM :: (Applicative m, Monad t, Traversable t) =>    t a  -> (a -> m (t b)) -> m (t b)
 bind2  :: (Monad m,       Monad t, Traversable t) => m (t a) -> (a -> m (t b)) -> m (t b)
 
-bind   m f = join $      (                        fmap f) $ m -- >>= / >$>=
+bind   m f = join $      (                        fmap f) $ m -- >>= / >-==
 bindI  m f =        fmap (     join .             fmap f) $ m -- >>-=
 bindM  m f = join $ fmap (            sequenceA . fmap f) $ m -- >>=-
 bindIM m f =             (fmap join . sequenceA . fmap f) $ m -- ->==
