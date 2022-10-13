@@ -1,6 +1,6 @@
 # Monad-Traversables
 
-### `>>== :: (Monad m, Monad t, Traversable t) => m (t a) -> (a -> m (t b)) -> m (t b)`
+#### `>>== :: (Monad m, Monad t, Traversable t) => m (t a) -> (a -> m (t b)) -> m (t b)`
 
 Ok, so I'll make this simple.
 
